@@ -52,17 +52,17 @@ class PompfenData {
     {
       'name': 'Stab',
       'size': '1800 mm',
-      'image': 'assets/images/Q-tip.png',
+      'image': 'assets/images/Stab.png',
     },
     {
       'name': 'Langpompfe',
       'size': '1400 mm',
-      'image': 'assets/images/Q-tip.png',
+      'image': 'assets/images/Langpompfe.png',
     },
     {
       'name': 'Kurzpompfe',
       'size': '850 mm',
-      'image': 'assets/images/Q-tip.png',
+      'image': 'assets/images/Kurzpompfe.png',
     },
     {
       'name': 'Schild',
@@ -72,7 +72,7 @@ class PompfenData {
     {
       'name': 'Kette',
       'size': '3200 mm',
-      'image': 'assets/images/Schild.png',
+      'image': 'assets/images/Kette.png',
     },
   ];
 }
