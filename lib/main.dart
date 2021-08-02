@@ -4,42 +4,55 @@ import 'package:flutter/material.dart';
 void main() => runApp(Dashboard());
 
 class Dashboard extends StatelessWidget {
-  var pompfenData = PompfenData.getData;
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-            body: Container(
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  Expanded(
-                    child: ListView.builder(
-                      itemCount: pompfenData.length,
-                      itemBuilder: (context, index) =>
-                          _buildCard(pompfenData[index]),
-                    ),
-                  ),
-                ],
-              ),
-            )));
-  }
-  Widget _buildCard(data){
-    return Card(
-      clipBehavior: Clip.antiAlias,
-      child: Column(
-        children: [
-          ListTile(
-            title: Text(data['name']),
-            subtitle: Text(data['size']),
-          ),
-          Image.asset(data['image'])
-        ],
-      ),
+        home: PageOne(),
     );
   }
+}
+
+class PageOne extends StatelessWidget{
+  final pompfenData = PompfenData.getData;
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+        body: Container(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Expanded(
+                child: ListView.builder(
+                  itemCount: pompfenData.length,
+                  itemBuilder: (context, index) =>
+                      _buildCard(pompfenData[index]),
+                ),
+              ),
+            ],
+          ),
+        ),
+    );
+  }
+
+  Widget _buildCard(data){
+    return Card(
+        //clipBehavior: Clip.antiAlias,
+        child: Column(
+          children: [
+            ListTile(
+              title: Text(data['name']),
+              subtitle: Text(data['size']),
+            ),
+            Image.asset(data['image'])
+          ],
+        ),
+      );
+  }
+}
+
+class PageTwo {
+
 }
 
 class PompfenData {
